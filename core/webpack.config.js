@@ -18,11 +18,9 @@ module.exports = withModuleFederationPlugin({
   },
 });
 
-module.exports = {
-  plugins: [
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
-    }),
-  ],
-};
+module.exports.plugins = [
+  new WorkboxPlugin.GenerateSW({
+    clientsClaim: true,
+    skipWaiting: true,
+  }),
+];
