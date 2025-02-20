@@ -1,0 +1,27 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 250px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input {
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  border: 0;
+  background-color: antiquewhite;
+  border-radius: 12px;
+  padding: 4px 12px;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

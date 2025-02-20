@@ -1,0 +1,12 @@
+.core-actions {
+  display: flex;
+  gap: 12px
+}
+
+button {
+  border: 0;
+  background-color: antiquewhite;
+  border-radius: 12px;
+  max-width: 120px;
+  padding: 4px 12px;
+}

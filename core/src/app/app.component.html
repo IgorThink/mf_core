@@ -1,0 +1,21 @@
+<h1>
+  Core Page for Microfrontends
+</h1>
+<div class="core-actions">
+  <button (click)="loadModule()">
+    load microfrontend
+  </button>
+  <button (click)="goHome()">
+    back to core pages
+  </button>
+</div>
+<div>
+  <h2>
+    Данные основного приложения: привет {{username | async}}
+  </h2>
+</div>
+  <app-form></app-form>
+<div >
+  <router-outlet></router-outlet>
+</div>
+<div>

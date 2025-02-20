@@ -1,0 +1,7 @@
+<div class="form" [formGroup]="authForm">
+  <input placeholder="email" formControlName="email"> 
+  <input placeholder="password" formControlName="password">
+  <button [disabled]="authForm.invalid" (click)="submit()">
+    submit
+  </button>
+</div>
