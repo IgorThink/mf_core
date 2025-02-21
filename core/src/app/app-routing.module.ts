@@ -10,23 +10,22 @@ const routes: Routes = [
     path: 'mf',
     loadChildren: () =>
       loadRemoteModule({
-          type: 'module',
-          remoteEntry: 'http://localhost:4201/remoteEntry.js',
-          exposedModule: './Module'
-      })
-      .then(m => {
-        return m.AppFromsModule})
+        type: 'module',
+        remoteEntry: 'http://localhost:4201/remoteEntry.js',
+        exposedModule: './Module',
+      }).then((m) => {
+        return m.AppFormsModule;
+      }),
   },
 
   {
     path: 'mf-test',
-    component: MfWrapperComponent
+    component: MfWrapperComponent,
   },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

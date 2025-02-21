@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormComponent } from './components/auth-form.component';
+import { AuthFormComponent } from './components/auth-form.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: FormComponent
-  }
+    component: AuthFormComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppFormsRoutingModule { }
+export class AppFormsRoutingModule {}

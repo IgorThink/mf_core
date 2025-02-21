@@ -1,0 +1,112 @@
+{
+  "configVersion": 1,
+  "timestamp": 1740084546607,
+  "index": "https://github.com/CherkasIvan/mf_core/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://github.com/CherkasIvan/mf_core/favicon.ico",
+        "https://github.com/CherkasIvan/mf_core/index.html",
+        "https://github.com/CherkasIvan/mf_core/main.b3a9dd9db89a0324.js",
+        "https://github.com/CherkasIvan/mf_core/polyfills.9209e96f4640b8d2.js",
+        "https://github.com/CherkasIvan/mf_core/service-worker.js",
+        "https://github.com/CherkasIvan/mf_core/styles.ef46db3751d8e999.css",
+        "https://github.com/CherkasIvan/mf_core/workbox-bc3e3c26.js"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "lazy",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://github.com/CherkasIvan/mf_core/assets/icons/icon-128x128.png",
+        "https://github.com/CherkasIvan/mf_core/assets/icons/icon-144x144.png",
+        "https://github.com/CherkasIvan/mf_core/assets/icons/icon-152x152.png",
+        "https://github.com/CherkasIvan/mf_core/assets/icons/icon-192x192.png",
+        "https://github.com/CherkasIvan/mf_core/assets/icons/icon-384x384.png",
+        "https://github.com/CherkasIvan/mf_core/assets/icons/icon-512x512.png",
+        "https://github.com/CherkasIvan/mf_core/assets/icons/icon-72x72.png",
+        "https://github.com/CherkasIvan/mf_core/assets/icons/icon-96x96.png",
+        "https://github.com/CherkasIvan/mf_core/assets/mf.manifest.json"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "core",
+      "patterns": [
+        "https:\\/\\/localhost:4200\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 86400000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    },
+    {
+      "name": "mf1",
+      "patterns": [
+        "https:\\/\\/localhost:4201\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 86400000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "https://github.com/CherkasIvan/mf_core/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://github.com/CherkasIvan/mf_core/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://github.com/CherkasIvan/mf_core/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://github.com/CherkasIvan/mf_core/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://github.com/CherkasIvan/mf_core/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://github.com/CherkasIvan/mf_core/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://github.com/CherkasIvan/mf_core/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://github.com/CherkasIvan/mf_core/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://github.com/CherkasIvan/mf_core/assets/mf.manifest.json": "24eabf0b66b602cb42e40c82e506a34a30855be6",
+    "https://github.com/CherkasIvan/mf_core/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://github.com/CherkasIvan/mf_core/index.html": "551536aab687c76c149b268495180c0065bc213c",
+    "https://github.com/CherkasIvan/mf_core/main.b3a9dd9db89a0324.js": "7febce3f1554ee5c11794eaa17667bf5dc10027c",
+    "https://github.com/CherkasIvan/mf_core/polyfills.9209e96f4640b8d2.js": "6467cd705cc03642ef766b2ddc7565e35c954d89",
+    "https://github.com/CherkasIvan/mf_core/service-worker.js": "4ead9dfdc240e1a1efa6f57d4fe47fba8645a6d5",
+    "https://github.com/CherkasIvan/mf_core/styles.ef46db3751d8e999.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "https://github.com/CherkasIvan/mf_core/workbox-bc3e3c26.js": "befc15ecad2073d31d3ef809f6839f9ad6256be0"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

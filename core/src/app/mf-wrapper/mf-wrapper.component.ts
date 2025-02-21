@@ -1,10 +1,14 @@
 import {
   Component,
-  ComponentFactoryResolver,
-  ComponentRef,
-  HostListener,
   ViewChild,
   ViewContainerRef,
+  OnInit,
+  AfterViewChecked,
+  Injector,
+  inject,
+  InjectFlags,
+  ComponentFactoryResolver,
+  ComponentRef,
 } from '@angular/core';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { StoreService } from '../store/store.service';
@@ -14,50 +18,53 @@ import { StoreService } from '../store/store.service';
   templateUrl: './mf-wrapper.component.html',
   styleUrls: ['./mf-wrapper.component.css'],
 })
-export class MfWrapperComponent {
+export class MfWrapperComponent implements OnInit, AfterViewChecked {
   @ViewChild('childContainer', { read: ViewContainerRef })
   childContainer!: ViewContainerRef;
 
   private form!: Element;
+  private hasListener: boolean = false;
+  private store = inject(StoreService);
 
-  private hasListner: boolean = false;
+  constructor(private injector: Injector) {
+    this.loadChild(this.injector);
+  }
 
-  constructor(
-    private cfr: ComponentFactoryResolver,
-    private store: StoreService
-  ) {}
-
-  async loadChild() {
-    let formsComponent;
-    const data = await loadRemoteModule({
+  async loadChild(inj: Injector) {
+    const { AuthFormComponent } = await loadRemoteModule({
       type: 'module',
       remoteEntry: 'http://localhost:4201/remoteEntry.js',
       exposedModule: './Component',
-    }).then((data) => {
-      formsComponent = data.FormComponent;
-      return;
     });
-    const factory = this.cfr.resolveComponentFactory(formsComponent as any);
-    this.childContainer.clear();
-    const ref: ComponentRef<any> = this.childContainer.createComponent(factory);
+
+    const factory = inj
+      .get(ComponentFactoryResolver)
+      .resolveComponentFactory(AuthFormComponent as any);
+    if (this.childContainer) {
+      this.childContainer.clear();
+    }
+    const ref: ComponentRef<any> = this.childContainer.createComponent(
+      factory,
+      0,
+      inj
+    );
+
     this.store.formData.subscribe((data: any) => {
-      ref.setInput('form', data);
-      ref.setInput('isRoot', true);
+      ref.instance.form = data;
+      ref.instance.isRoot = true;
     });
   }
 
-  ngOnInit(): void {
-    this.loadChild();
-  }
+  ngOnInit(): void {}
 
   ngAfterViewChecked(): void {
-    const el = document.querySelector('app-form');
+    const el = document.querySelector('app-auth-form');
 
     if (el && !this.form) {
       this.form = el as Element;
     }
-    if (document.getElementById('submitBtn') && !this.hasListner) {
-      this.hasListner = true;
+    if (document.getElementById('submitBtn') && !this.hasListener) {
+      this.hasListener = true;
       document
         .getElementById('submitBtn')
         ?.addEventListener('same', (event: any) => {
